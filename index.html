@@ -24,6 +24,13 @@
     </div>
   </div>
 
+  <script type="text/template" id="homeTemplate">
+    <h2>Lorem ipsum dolor sit amet</h2>
+    <p>Phasellus et metus a augue vulputate euismod. Vestibulum gravida convallis erat eu imperdiet. In fringilla eget erat vitae molestie. Cras vestibulum lacus a finibus bibendum. Sed tortor massa, maximus non pulvinar nec, luctus nec neque. Sed sed dui tellus. Sed vitae hendrerit odio. Praesent facilisis lacinia ligula, at consectetur lorem hendrerit nec. Ut vitae dolor egestas, ornare est at, fermentum augue. Maecenas eu nulla ac ante varius vulputate at ut justo. In dignissim et tellus consequat fermentum. Praesent vulputate suscipit mi, pharetra suscipit leo dictum imperdiet. Curabitur suscipit ligula et mattis dictum.</p>
+    <p>Pellentesque vel quam eget libero convallis fermentum sit amet pretium neque. Vivamus rutrum turpis augue. Sed vel condimentum ex. Phasellus vestibulum dapibus lectus, sit amet interdum augue tempus convallis. Duis pulvinar sodales congue. Quisque et lacus elementum, dignissim nisl vel, convallis nibh. Aliquam vestibulum tortor consequat, eleifend nibh vitae, ullamcorper sapien. Nulla facilisi. Vestibulum blandit velit at dignissim luctus. Donec at quam aliquam, porttitor ex vitae, fermentum ante. Curabitur sollicitudin urna eget enim tristique, non fringilla lacus facilisis. Curabitur fringilla purus vitae sapien sollicitudin, a dapibus libero rhoncus. Sed id euismod orci, sed pretium elit. Nam tempus elit lobortis, congue leo vitae, rhoncus mauris. Cras quis lacinia quam. Aenean condimentum quis nulla non vulputate.</p>
+    <a class="btn btn-link" href="#">Read more</a>
+  </script>
+
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.3.1/backbone-min.js"></script>
@@ -39,8 +46,9 @@
       el: '#app',
       render: function(){
         var self = this;
+        var template = _.template($('#homeTemplate').html());
 
-        self.$el.html('HomeView');
+        self.$el.html(template);
       }
     });
 
