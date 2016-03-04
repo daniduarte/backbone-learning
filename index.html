@@ -71,6 +71,7 @@
       el: '#app',
       render: function(){
         var self = this;
+        var tasks = new TasksCollection;
         var template = _.template($('#taskListTemplate').html());
 
         self.$el.html(template);
