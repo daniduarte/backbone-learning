@@ -34,7 +34,9 @@
   <script type="text/template" id="taskListTemplate">
     <h2>To do</h2>
     <ul class="list-group">
-      <li class="list-group-item">Fake task</li>
+      <% _.each(tasks, function(task){ %>
+      <li class="list-group-item"><%= task.get('title') %></li>
+      <% }); %>
     </ul>
   </script>
 
@@ -74,11 +76,9 @@
         var tasks = new TasksCollection;
         var template = _.template($('#taskListTemplate').html());
 
-        self.$el.html(template);
-
         tasks.fetch({
           success: function(tasks){
-            console.log(tasks);
+            self.$el.html(template({tasks: tasks.models}));
           }
         });
       }
