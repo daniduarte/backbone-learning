@@ -32,7 +32,6 @@
   </script>
 
   <script type="text/template" id="taskListTemplate">
-    <h2>To do</h2>
     <ul class="list-group">
       <% _.each(tasks, function(task){ %>
       <li class="list-group-item"><%= task.get('title') %></li>
@@ -75,6 +74,8 @@
         var self = this;
         var tasks = new TasksCollection;
         var template = _.template($('#taskListTemplate').html());
+
+        self.$el.html('<p class="text-center"><i class="fa fa-circle-o-notch fa-spin"></i>Loading tasks from server...</p>');
 
         tasks.fetch({
           success: function(tasks){
