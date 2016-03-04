@@ -8,6 +8,10 @@
 </head>
 <body>
 
+  <div>
+    <a href="#">Home</a>
+    <a href="#/tasks">Tasks</a>
+  </div>
   <div id="app"></div>
 
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
@@ -54,7 +58,8 @@
     // Clasess
     var Router = Backbone.Router.extend({
       routes: {
-        '': 'home'
+        ''      : 'home',
+        'tasks' : 'tasks'
       }
     });
 
@@ -63,6 +68,10 @@
 
     router.on('route:home', function(){
       homeView.render();
+    });
+
+    router.on('route:tasks', function(){
+      taskListView.render();
     });
 
     Backbone.history.start();
