@@ -30,8 +30,18 @@
       }
     });
 
+    var TaskListView = Backbone.View.extend({
+      el: '#app',
+      render: function(){
+        var self = this;
+
+        self.$el.html('TaskListView')
+      }
+    });
+
     // Instances
     var homeView = new HomeView;
+    var taskListView = new TaskListView;
 
 
 
